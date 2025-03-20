@@ -1,0 +1,372 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background: #f0f8ff; /* Light blue base (Alice Blue) */
+    color: #333;
+}
+
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for pop-out effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#navbar:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#navbar ul li {
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    color: #0465ba; /* Updated main accent color */
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#navbar ul li a:hover {
+    background-color: #0465ba; /* Updated main accent color */
+    color: #fff;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 80px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #0465ba; /* Updated main accent color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #555;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Alternating Section Accents */
+section:nth-child(odd) {
+    background: #ffffff; /* White for odd sections */
+}
+
+section:nth-child(even) {
+    background: #e6f0ff; /* Light blue for even sections */
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.skill-item {
+    width: 120px;
+    text-align: center;
+    background: white; /* Solid white background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(4, 101, 186, 0.3); /* Updated main accent color */
+}
+
+/* Diagonal shine effect */
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 80%
+    );
+    transform: rotate(45deg);
+    transition: top 0.6s ease, left 0.6s ease;
+    pointer-events: none; /* Ensure the shine doesn't block clicks */
+    opacity: 0; /* Hidden by default */
+}
+
+.skill-item:hover::before {
+    top: 50%;
+    left: 50%;
+    opacity: 1; /* Visible on hover */
+}
+
+.skill-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.skill-item p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #0465ba; /* Updated main accent color */
+}
+
+/* About Me Section */
+#about {
+    min-height: 100vh;
+    padding: 80px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff; /* White background for About Me section */
+}
+
+.photo-container {
+    width: 250px; /* Increased size */
+    height: 250px; /* Increased size */
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Ensure the image stays within the circle */
+    border: 2px solid rgba(4, 101, 186, 0.3); /* Updated main accent color */
+    box-shadow: 0 4px 10px rgba(4, 101, 186, 0.2); /* Updated main accent color */
+    margin-bottom: 20px; /* Space between photo and subheading */
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the circle */
+}
+
+.subheading {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #0465ba; /* Updated main accent color */
+    margin-bottom: 10px; /* Space between subheading and About Me title */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Add spacing between letters */
+}
+
+#about h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #0465ba; /* Updated main accent color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px; /* Space between subheading and About Me title */
+    margin-bottom: 20px; /* Space between About Me title and glossy rectangle */
+}
+
+/* Glossy Rectangle */
+.glossy-rectangle {
+    width: auto; /* Default width */
+    max-width: 600px; /* Default maximum width */
+    padding: 20px; /* Inner spacing */
+    background: #0465ba; /* Solid blue background */
+    border-radius: 15px; /* Soft corners */
+    box-shadow: 0 4px 15px rgba(4, 101, 186, 0.6); /* Stronger blue shadow */
+    border: 1px solid rgba(4, 101, 186, 0.8); /* Darker blue border */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    text-align: center; /* Center-align heading and flare lines */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    margin: 0 auto; /* Center the rectangle horizontally */
+    position: relative; /* Required for pseudo-elements */
+}
+
+/* Horizontal Solid White Lines */
+.glossy-rectangle h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #fff !important; /* Force white text for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 20px; /* Space between heading and paragraph */
+    position: relative; /* Required for pseudo-elements */
+    display: inline-block; /* Ensure pseudo-elements align properly */
+    padding: 0 80px; /* Add space for the longer lines */
+}
+
+.glossy-rectangle h2::before,
+.glossy-rectangle h2::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Center vertically */
+    width: 80px; /* Increased length of the flare lines */
+    height: 4px; /* Thickness of the flare lines */
+    background: #fff; /* Solid white color */
+    border-radius: 2px; /* Rounded corners */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.glossy-rectangle h2::before {
+    left: 0; /* Position to the left of the heading */
+}
+
+.glossy-rectangle h2::after {
+    right: 0; /* Position to the right of the heading */
+}
+
+/* Left-align the paragraph text */
+.glossy-rectangle p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #fff; /* White text for contrast */
+    line-height: 1.6;
+    margin: 0; /* Remove default margin */
+    word-break: normal; /* Allow normal word breaking */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    white-space: normal; /* Allow text to wrap naturally */
+    text-align: left; /* Align paragraph text to the left */
+}
+
+
+/* Projects Section */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between project items */
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Keep this for the overall project item */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative; /* Required for the shine effect */
+    cursor: pointer; /* Indicates the entire section is clickable */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Slightly enlarge the entire project item */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Diagonal shine effect for the entire project item */
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 80%
+    );
+    transform: rotate(45deg);
+    transition: top 0.6s ease, left 0.6s ease;
+    pointer-events: none; /* Ensures the shine doesn't block clicks */
+    opacity: 0; /* Hidden by default */
+    z-index: 1; /* Ensure the shine is above the content */
+}
+
+.project-item:hover::before {
+    top: 50%;
+    left: 50%;
+    opacity: 1; /* Visible on hover */
+}
+
+.project-image {
+    position: relative;
+    width: 400px; /* Fixed width for image panel */
+    height: 250px; /* Fixed height for image panel */
+    border-radius: 15px 0 0 15px; /* Soft corners on the left */
+    /* Remove overflow: hidden to prevent clipping */
+    z-index: 0; /* Ensure the image is below the shine */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px; /* Match container's border radius */
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-image img {
+    transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+.project-info {
+    flex: 1;
+    padding: 25px;
+    z-index: 0; /* Ensure the text is below the shine */
+}
+
+.project-info h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #0465ba; /* Main accent color */
+}
+
+.project-info h3 a {
+    color: inherit; /* Inherit the color from h3 */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+.project-info h3 a:hover {
+    color: #034a8f; /* Darker shade on hover */
+}
+
+.project-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.project-info p strong {
+    color: #0465ba; /* Accent color for technologies */
+}

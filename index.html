@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#courses">Courses</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="about">
+        <div class="photo-container">
+            <img src="./images/photo.jpg" alt="Photograph" class="profile-photo">
+        </div>
+        <h3 class="subheading">Generative AI | Computer Vision | NLP</h3>
+        <div class="glossy-rectangle">
+            <h2>About Me</h2>
+            <p>I am a passionate Computer Science graduate student at the New Jersey Institute of Technology, deeply invested in building and scaling Generative AI models.
+                My current research focuses Score-Based Generative Models and Diffusion Models, with an emphasis on their application in the domain of Large Language Models to model Cross-Modal and Multi-Modal generative tasks.
+            </p>
+            <p>
+                I recently Engineered a 1.2B parameter Elucidated Latent Diffusion Sparse Transformer Model for text guided image generation achieving state of the art results at a micro-budget.
+                You can find more details about the project below.
+            <p>
+                I have experience working with Score-based Generative Models, Denoising Score Matching Models, Variational Autoencoders, Autoregressive Models and Generative Adversarial Networks. 
+            </p>
+            <p>
+                Outside of my research, I like to play guitar, football (the real kind) and baking.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-item">
+                <div class="project-image" onclick="window.open('https://github.com/JiteshChavan/Micro-Budget-Sparse-Elucidated-Latent-Diffusion-Transformer', '_blank')">
+                    <img src="./images/image_grid.png" alt="Project 1">
+                </div>
+                <div class="project-info">
+                    <h3><a href="https://github.com/JiteshChavan/Micro-Budget-Sparse-Elucidated-Latent-Diffusion-Transformer" target="_blank">Elucidated Latent Diffusion Sparse Transformer Model</a></h3>
+                    <p>
+                        Engineered a 1.2B parameter Elucidated Latent Diffusion Sparse Transformer Model for text-guided image generation, achieving state-of-the-art results on a micro-budget. This project involved extensive optimization of model architecture and training pipelines.
+                    </p>
+                    <p><strong>Skills:</strong>Multi-Modal / Cross-Modal Generative Modeling, Score Based Generative (Diffusion) Models, Computer Vision, Natural Language Processing</p>
+                </div>
+            </div>
+    
+            <!-- Project 2 -->
+            <div class="project-item">
+                <div class="project-image" onclick="window.open('https://github.com/your-repo-2', '_blank')">
+                    <img src="./images/project2.jpg" alt="Project 2">
+                </div>
+                <div class="project-info">
+                    <h3><a href="https://github.com/your-repo-2" target="_blank">Project 2: Cross-Modal Generative AI</a></h3>
+                    <p>
+                        Developed a cross-modal generative AI system that integrates text and image data for multi-modal tasks. The system leverages Score-Based Generative Models and Diffusion Models to achieve high-quality outputs.
+                    </p>
+                    <p><strong>Technologies:</strong> PyTorch, Python, Hugging Face Transformers</p>
+                </div>
+            </div>
+    
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+
+    <section id="experiences">
+        <h2>Experiences</h2>
+        <p>This section is about my experiences.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <!-- Skills will be dynamically populated here -->
+        </div>
+    </section>
+
+    <section id="courses">
+        <h2>Courses</h2>
+        <p>This section is about my courses.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
