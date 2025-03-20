@@ -46,15 +46,24 @@
         <div class="projects-container">
             <!-- Project 1 -->
             <div class="project-item">
-                <div class="project-image" onclick="window.open('https://github.com/JiteshChavan/Micro-Budget-Sparse-Elucidated-Latent-Diffusion-Transformer', '_blank')">
-                    <img src="./images/image_grid.png" alt="Project 1">
+                <div class="project-images">
+                    <div class="project-image" onclick="window.open('https://github.com/JiteshChavan/Micro-Budget-Sparse-Elucidated-Latent-Diffusion-Transformer', '_blank')">
+                        <img src="./images/image_grid.png" alt="Project 1">
+                    </div>
+                    <div class="project-image" onclick="window.open('https://github.com/JiteshChavan/Micro-Budget-Sparse-Elucidated-Latent-Diffusion-Transformer', '_blank')">
+                        <img src="./images/image_grid_2.png" alt="Project 1 Additional Image">
+                    </div>
                 </div>
                 <div class="project-info">
                     <h3><a href="https://github.com/JiteshChavan/Micro-Budget-Sparse-Elucidated-Latent-Diffusion-Transformer" target="_blank">Elucidated Latent Diffusion Sparse Transformer Model</a></h3>
                     <p>
-                        Engineered a 1.2B parameter Elucidated Latent Diffusion Sparse Transformer Model for text-guided image generation, achieving state-of-the-art results on a micro-budget. This project involved extensive optimization of model architecture and training pipelines.
+                        Engineered a 1.2B parameter Elucidated Latent Diffusion Sparse Transformer Model for text-guided image generation, achieving state-of-the-art results on a micro-budget.
+                        This project involved state of the art Cost Optimization techniques like patch masking to reduce input sequence length to the transformer backbone,
+                        lightweight patchmixer backbone prior to patch masking and the cardinal DiT backbone to alleviate the downsides of patch masking.
+                        Finally progressive Pretraining-Finetuning pipeline, with 75% patch masking and no patch masking respectively, enabling effective masked and unmasked denoising representation learning.
                     </p>
                     <p><strong>Skills:</strong>Multi-Modal / Cross-Modal Generative Modeling, Score Based Generative (Diffusion) Models, Computer Vision, Natural Language Processing</p>
+                    <p>Click on the panels on the left to head over to the repository</p>
                 </div>
             </div>
     

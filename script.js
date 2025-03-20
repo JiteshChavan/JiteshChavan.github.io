@@ -18,3 +18,17 @@ skillImages.forEach(image => {
     skillItem.appendChild(p);
     skillsContainer.appendChild(skillItem);
 });
+
+// Make the navbar sticky on scroll
+const navbar = document.getElementById('navbar');
+const scrollThreshold = 100; // Adjust this value as needed
+
+function handleScroll() {
+    if (window.scrollY > scrollThreshold) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}
+
+window.addEventListener('scroll', handleScroll);
