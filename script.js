@@ -1,7 +1,9 @@
 // Dynamically populate skills section
 const skillsContainer = document.querySelector('.skills-container');
 const imagesPath = './images/';
-const skillImages = ['PyTorch.png', 'Python.png', 'TensorFlow.png']; // Add more image names as needed
+const skillImages = ['PyTorch.png', 'Python.png', 'TensorFlow.png', 'C-C++.png', 'Matlab.png', 'OpenCV.png', 'HuggingFace.png', 'GitHub.png'
+    , 'Java.png', 'LatTeX.png', 'Unity.png', 'Photoshop.png', 'Arduino.png'
+]; // Add more image names as needed
 
 skillImages.forEach(image => {
     const skillItem = document.createElement('div');

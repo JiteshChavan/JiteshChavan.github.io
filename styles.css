@@ -100,15 +100,17 @@ section:nth-child(even) {
 
 /* Skills Section */
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns of equal width */
+    gap: 30px; /* Space between items */
     padding: 20px;
+    justify-content: center; /* Center the grid horizontally */
+    max-width: 1200px; /* Limit the maximum width of the container */
+    margin: 0 auto; /* Center the container on the page */
 }
 
 .skill-item {
-    width: 120px;
+    width: 120px; /* Fixed width for each skill item */
     text-align: center;
     background: white; /* Solid white background */
     border-radius: 15px;
@@ -397,4 +399,22 @@ section:nth-child(even) {
 
 .project-info p strong {
     color: #0465ba; /* Accent color for technologies */
+}
+
+/* Custom styling for Project 3 images */
+.project-3-images .project-image {
+    width: 100%; /* Full width of the container */
+    height: 200px; /* Fixed height for the container (adjust as needed) */
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+    background: #f0f8ff; /* Match the background color to blend with the section */
+    overflow: hidden; /* Ensure the image stays within the container */
+    margin-bottom: 10px; /* Add space between images */
+}
+
+.project-3-images .project-image img {
+    width: 100%; /* Stretch the image to fill the container width */
+    height: 100%; /* Stretch the image to fill the container height */
+    object-fit: fill; /* Stretch the image without maintaining aspect ratio */
 }
