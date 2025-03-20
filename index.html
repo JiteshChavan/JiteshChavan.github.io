@@ -18,12 +18,29 @@
         </ul>
     </nav>
 
-    <!-- Sections -->
     <section id="about">
-        <div class="photo-container">
-            <img src="./images/photo.jpg" alt="Photograph" class="profile-photo">
+        <!-- Left Section (Photo and Subheading) -->
+        <div class="left-section">
+            <div class="photo-container">
+                <img src="./images/photo.jpg" alt="Photograph" class="profile-photo">
+            </div>
+            <h2 class="name">Jitesh Chavan</h2>
+            <h3 class="subheading">Generative AI | Computer Vision | NLP</h3>
+            <!-- Icon Container -->
+        <div class="icon-container">
+            <a href="https://github.com/JiteshChavan" target="_blank" class="icon-link">
+                <img src="./images/GitHub.png" alt="GitHub" class="icon">
+            </a>
+            <a href="mailto:jchavan010@gmail.com" class="icon-link">
+                <img src="./images/mail.png" alt="Email" class="icon">
+            </a>
+            <a href="https://www.linkedin.com/in/jchavan24/" target="_blank" class="icon-link">
+                <img src="./images/LinkedIn.png" alt="LinkedIn" class="icon">
+            </a>
         </div>
-        <h3 class="subheading">Generative AI | Computer Vision | NLP</h3>
+        </div>
+    
+        <!-- Right Section (Glossy Rectangle) -->
         <div class="glossy-rectangle">
             <h2>About Me</h2>
             <p>I am a passionate Computer Science graduate student at the New Jersey Institute of Technology, deeply invested in building and scaling Generative AI models.
@@ -37,6 +54,9 @@
             </p>
             <p>
                 Outside of my research, I like to play guitar, football (the real kind) and baking.
+            </p>
+            <p>
+                If you'd like to take a look at my CV, drop me an email : jchavan010@gmail.com
             </p>
         </div>
     </section>
@@ -116,15 +136,46 @@
                 </div>
             </div>
 
-    
+            <div class="project-item">
+                <div class="project-info">
+                    <h3><a href="https://github.com/JiteshChavan/Micrograd" target="_blank">MicrogradEngine</a></h3>
+                    <p>
+                        An atomic Autogradient engine. Implements backpropagation (reverse-mode autodifferentiation) 
+                        over a dynamically built Directed Acyclic
+                        Graph (DAG) andasmallneuralnetworkslibrary on top of it with a PyTorch-like API.
+                    </p>
+                    <p><strong>Skills:</strong> Pytorch, Python</p>
+                </div>
+            </div>
             <!-- Add more projects as needed -->
         </div>
     </section>
 
     <section id="experiences">
         <h2>Experiences</h2>
-        <p>This section is about my experiences.</p>
+        <div class="experience-item">
+            <p class="company">Ford Motor Company</p> <!-- Company name moved here -->
+            <h3>Software Engineer</h3> <!-- Role moved here -->
+            <p class="location-duration">Chennai, Tamil Nadu, India | July 2021 - Dec 2022</p>
+            <ul class="responsibilities">
+                Contributed to pptimizing REST APIs for the APAC region (ANZ, India, South Africa) e-commerce project,
+                and enhancing Ford’s e-commerce platform using <strong>Spring MVC/Boot</strong> frameworks.
+                Also developed content management prototypes for Ford’s <strong>‘Shop-Buy-Own Customer Journey’</strong> project using <strong>SAP Hybris</strong> framework.
+            </ul>
+        </div>
+        <div class="experience-item">
+            <p class="company">Visvesvaraya National Institute of Technology</p> <!-- Company name moved here -->
+            <h3>Research Assistant, Computer Vision Lab</h3> <!-- Role moved here -->
+            <p class="location-duration">Nagpur, Maharashtra, India | July 2020 - May 2021</p>
+            <ul class="responsibilities">
+                Researched real-time object detection and recognition systems on memory-constrained single-board computers,
+                Which helped optimize the <strong>Haar Cascade Classifier</strong> in C for single-board computer constraints, improving efficiency in resource-limited environments for the Final Year Undergrad Project : Real Time Face detection
+                and recognition using Multi-Tasked Cascaded Convolutional Neural Network.
+                Also researched synthetic dataset generation using <strong>Generative Adversarial Networks (GANs)</strong> for computer vision applications.
+            </ul>
+        </div>
     </section>
+    
 
     <section id="skills">
         <h2>Skills</h2>

@@ -1,18 +1,20 @@
-/* General Styles */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 0; /* Remove padding to allow navbar to span full width */
     scroll-behavior: smooth;
     background: #f0f8ff; /* Light blue base (Alice Blue) */
     color: #333;
+    max-width: 1400px; /* Increased max-width to use more of the page */
+    margin: 0 auto; /* Center the webpage horizontally */
 }
 
 /* Navigation Bar */
 #navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0; /* Start from the very left */
+    width: 100vw; /* Full viewport width */
     background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
     backdrop-filter: blur(10px); /* Frosted glass effect */
     display: flex;
@@ -60,17 +62,18 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
 }
 
-
 /* Sections */
 section {
     min-height: 100vh;
-    padding: 80px 20px 20px;
+    padding: 80px 10px 20px; /* Reduced padding on the sides */
     box-sizing: border-box;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1400px; /* Increased max-width to use more of the page */
+    margin: 0 auto; /* Center the section horizontally */
 }
 
 section h2 {
@@ -105,7 +108,7 @@ section:nth-child(even) {
     gap: 30px; /* Space between items */
     padding: 20px;
     justify-content: center; /* Center the grid horizontally */
-    max-width: 1200px; /* Limit the maximum width of the container */
+    max-width: 1400px; /* Increased max-width to use more of the page */
     margin: 0 auto; /* Center the container on the page */
 }
 
@@ -169,68 +172,113 @@ section:nth-child(even) {
 /* About Me Section */
 #about {
     min-height: 100vh;
-    padding: 80px 20px 20px;
+    padding: 80px 10px 20px; /* Reduced padding on the sides */
     box-sizing: border-box;
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row; /* Align children horizontally */
+    justify-content: space-between; /* Space out the left and right sections */
+    align-items: center; /* Center vertically */
     background: #ffffff; /* White background for About Me section */
+    max-width: 1400px; /* Increased max-width to use more of the page */
+    margin: 0 auto; /* Center the section horizontally */
 }
 
-.photo-container {
+/* Left Section (Photo and Subheading) */
+#about .left-section {
+    display: flex;
+    flex-direction: column; /* Stack photo, name, and subheading vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text within the name and subheading */
+    margin-right: 20px; /* Reduced space between left section and glossy rectangle */
+}
+
+#about .photo-container {
     width: 250px; /* Increased size */
     height: 250px; /* Increased size */
     border-radius: 50%; /* Make it circular */
     overflow: hidden; /* Ensure the image stays within the circle */
     border: 2px solid rgba(4, 101, 186, 0.3); /* Updated main accent color */
     box-shadow: 0 4px 10px rgba(4, 101, 186, 0.2); /* Updated main accent color */
-    margin-bottom: 20px; /* Space between photo and subheading */
+    margin-bottom: 20px; /* Add space between photo and name */
 }
 
-.profile-photo {
+#about .profile-photo {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensure the image covers the circle */
 }
 
-.subheading {
-    font-size: 1.5em;
-    font-weight: 500;
+#about .name {
+    font-size: 2em; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold font weight */
     color: #0465ba; /* Updated main accent color */
-    margin-bottom: 10px; /* Space between subheading and About Me title */
+    margin-bottom: 10px; /* Add space between name and subheading */
+    text-align: center; /* Center-align the name */
+}
+
+#about .subheading {
+    font-size: 1.2em; /* Reduced font size */
+    font-weight: 625;
+    color: #0465ba; /* Updated main accent color */
     text-transform: uppercase; /* Uppercase text */
     letter-spacing: 2px; /* Add spacing between letters */
+    text-align: center; /* Center-align subheading text */
 }
 
-#about h2 {
-    font-size: 2.5em;
-    font-weight: 600;
-    color: #0465ba; /* Updated main accent color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 10px; /* Space between subheading and About Me title */
-    margin-bottom: 20px; /* Space between About Me title and glossy rectangle */
+/* Icon Container */
+.icon-container {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    gap: 20px; /* Space between icons */
+    margin-top: 15px; /* Space between subheading and icons */
 }
 
-/* Glossy Rectangle */
-.glossy-rectangle {
-    width: auto; /* Default width */
-    max-width: 600px; /* Default maximum width */
+/* Icon Links */
+.icon-link {
+    display: inline-block;
+    width: 40px; /* Size of the icon container */
+    height: 40px; /* Size of the icon container */
+    border-radius: 50%; /* Make it circular */
+    background-color: transparent; /* Transparent background by default */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    overflow: hidden; /* Ensure the icon stays within the circle */
+}
+
+/* Icons */
+.icon {
+    width: 100%; /* Fill the container */
+    height: 100%; /* Fill the container */
+    object-fit: contain; /* Ensure the icon fits within the circle */
+    transition: filter 0.3s ease; /* Smooth transition for icon color */
+}
+
+/* Hover Effects */
+.icon-link:hover {
+    background-color: #0465ba; /* Dark blue background on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.icon-link:hover .icon {
+    filter: brightness(0) invert(1); /* Turn the icon white on hover */
+}
+
+/* Right Section (Glossy Rectangle) */
+#about .glossy-rectangle {
+    flex: 1; /* Take up remaining space */
+    max-width: 800px; /* Increased max-width to use more of the page */
     padding: 20px; /* Inner spacing */
     background: #0465ba; /* Solid blue background */
     border-radius: 15px; /* Soft corners */
     box-shadow: 0 4px 15px rgba(4, 101, 186, 0.6); /* Stronger blue shadow */
     border: 1px solid rgba(4, 101, 186, 0.8); /* Darker blue border */
     backdrop-filter: blur(5px); /* Frosted glass effect */
-    text-align: center; /* Center-align heading and flare lines */
+    text-align: left; /* Left-align text */
     box-sizing: border-box; /* Ensure padding is included in width */
-    margin: 0 auto; /* Center the rectangle horizontally */
     position: relative; /* Required for pseudo-elements */
 }
 
-/* Horizontal Solid White Lines */
-.glossy-rectangle h2 {
+/* Centrally Aligned Heading with Flair Lines */
+#about .glossy-rectangle h2 {
     font-size: 2.5em;
     font-weight: 600;
     color: #fff !important; /* Force white text for contrast */
@@ -238,32 +286,33 @@ section:nth-child(even) {
     margin-top: 0; /* Remove default margin */
     margin-bottom: 20px; /* Space between heading and paragraph */
     position: relative; /* Required for pseudo-elements */
-    display: inline-block; /* Ensure pseudo-elements align properly */
-    padding: 0 80px; /* Add space for the longer lines */
+    text-align: center; /* Center-align the heading */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center the flair lines and text */
+    justify-content: center; /* Horizontally center the content */
+    gap: 20px; /* Add space between the flair lines and the text */
 }
 
-.glossy-rectangle h2::before,
-.glossy-rectangle h2::after {
+#about .glossy-rectangle h2::before,
+#about .glossy-rectangle h2::after {
     content: '';
-    position: absolute;
-    top: 50%; /* Center vertically */
-    width: 80px; /* Increased length of the flare lines */
-    height: 4px; /* Thickness of the flare lines */
+    flex: 1; /* Allow the lines to grow and take up remaining space */
+    max-width: 80px; /* Limit the length of the flair lines */
+    height: 4px; /* Thickness of the flair lines */
     background: #fff; /* Solid white color */
     border-radius: 2px; /* Rounded corners */
-    transform: translateY(-50%); /* Center vertically */
 }
 
-.glossy-rectangle h2::before {
-    left: 0; /* Position to the left of the heading */
+#about .glossy-rectangle h2::before {
+    margin-right: 20px; /* Space between the left line and the text */
 }
 
-.glossy-rectangle h2::after {
-    right: 0; /* Position to the right of the heading */
+#about .glossy-rectangle h2::after {
+    margin-left: 20px; /* Space between the right line and the text */
 }
 
 /* Left-align the paragraph text */
-.glossy-rectangle p {
+#about .glossy-rectangle p {
     font-size: 1.1em;
     font-weight: 400;
     color: #fff; /* White text for contrast */
@@ -273,17 +322,17 @@ section:nth-child(even) {
     overflow-wrap: break-word; /* Break long words if necessary */
     white-space: normal; /* Allow text to wrap naturally */
     text-align: left; /* Align paragraph text to the left */
+    max-width: 100%; /* Ensure text uses the full width of the container */
 }
-
 
 /* Projects Section */
 .projects-container {
     display: flex;
     flex-direction: column;
     gap: 40px; /* Space between project items */
-    max-width: 1200px; /* Limit the maximum width for better readability */
+    max-width: 1400px; /* Increased max-width to use more of the page */
     margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Add padding to prevent edge crowding */
+    padding: 0 10px; /* Reduced padding on the sides */
 }
 
 .project-item {
@@ -295,6 +344,7 @@ section:nth-child(even) {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     position: relative; /* Required for the shine effect */
     overflow: visible; /* Allow content to overflow */
+    width: 100%; /* Ensure the project item takes full width */
 }
 
 .project-item:hover {
@@ -337,6 +387,7 @@ section:nth-child(even) {
     border-radius: 15px 0 0 15px; /* Soft corners on the left */
     background: #f0f8ff; /* Match the background color to blend with the section */
     padding: 10px; /* Add padding to prevent images from touching the edges */
+    flex-shrink: 0; /* Prevent the image container from shrinking */
 }
 
 .project-image {
@@ -364,10 +415,11 @@ section:nth-child(even) {
 }
 
 .project-info {
-    flex: 1;
+    flex: 1; /* Take up remaining space */
     padding: 25px;
     text-align: left; /* Ensure text is left-aligned */
     z-index: 0; /* Ensure the text is below the shine */
+    min-width: 0; /* Allow text to wrap properly within the flex container */
 }
 
 .project-info h3 {
@@ -395,6 +447,7 @@ section:nth-child(even) {
     word-break: normal; /* Allow normal word breaking */
     overflow-wrap: break-word; /* Break long words if necessary */
     white-space: normal; /* Allow text to wrap naturally */
+    max-width: 100%; /* Ensure text uses the full width of the container */
 }
 
 .project-info p strong {
@@ -417,4 +470,66 @@ section:nth-child(even) {
     width: 100%; /* Stretch the image to fill the container width */
     height: 100%; /* Stretch the image to fill the container height */
     object-fit: fill; /* Stretch the image without maintaining aspect ratio */
+}
+
+/* Experiences Section */
+#experiences {
+    padding: 40px 10px; /* Reduced padding on the sides */
+    background: #ffffff; /* White background */
+    text-align: left;
+    max-width: 1400px; /* Increased max-width to use more of the page */
+    margin: 0 auto;
+}
+
+.experience-item {
+    margin-bottom: 40px;
+    padding: 0; /* Ensure no extra padding */
+    margin-left: 0; /* Ensure no extra margin */
+    width: 100%; /* Ensure full width */
+}
+
+/* Company Name */
+.experience-item .company {
+    font-size: 1.8em; /* Larger font size for company name */
+    font-weight: 600; /* Bold font weight */
+    color: #0465ba; /* Main accent color */
+    margin-bottom: 5px; /* Space between company and role */
+    text-align: left; /* Ensure left alignment */
+}
+
+/* Role */
+.experience-item h3 {
+    font-size: 1.5em; /* Slightly smaller font size for role */
+    font-weight: 500; /* Medium font weight */
+    color: #333; /* Dark text color */
+    margin-bottom: 5px; /* Space between role and location/duration */
+    text-align: left; /* Ensure left alignment */
+}
+
+/* Location and Duration */
+.experience-item .location-duration {
+    font-size: 1em;
+    color: #555; /* Medium gray color */
+    margin-bottom: 15px; /* Space between location/duration and responsibilities */
+    text-align: left; /* Ensure left alignment */
+}
+
+/* Responsibilities */
+.experience-item .responsibilities {
+    list-style-type: disc; /* Bullet points */
+    margin-left: 20px; /* Indent bullet points */
+    font-size: 1.1em;
+    color: #333; /* Dark text color */
+    line-height: 1.6; /* Improve readability */
+    padding-left: 20px; /* Ensure consistent indentation */
+    text-align: left; /* Ensure left alignment */
+}
+
+.experience-item .responsibilities li {
+    margin-bottom: 10px; /* Space between list items */
+    text-align: left; /* Ensure left alignment */
+}
+
+.experience-item .responsibilities strong {
+    color: #0465ba; /* Highlight key metrics and technologies */
 }
