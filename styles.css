@@ -558,6 +558,94 @@ section:nth-child(even) {
     max-width: 1200px; /* Match the max-width of project cards */
 }
 
+/* Course Link */
+.course-link {
+    display: block; /* Make the link a block element */
+    font-size: 0.8em; /* Smaller font size */
+    color: #0465ba; /* Accent color for the link */
+    text-decoration: none; /* Remove underline */
+    margin-top: 10px; /* Space between course name and link */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.course-link:hover {
+    color: #034a8f; /* Darker shade on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Single Panel Project */
+.single-panel-project {
+    display: flex;
+    align-items: stretch; /* Stretch children to fill height */
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+}
+
+.single-panel-project .project-image {
+    width: 400px; /* Fixed width for the image panel */
+    border-radius: 15px 0 0 15px; /* Soft corners on the left */
+    background: #f0f8ff; /* Match the background color to blend with the section */
+    padding: 10px; /* Add padding to prevent images from touching the edges */
+    flex-shrink: 0; /* Prevent the image container from shrinking */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.single-panel-project .project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure the image is fully visible */
+    transition: transform 0.3s ease;
+}
+
+.single-panel-project .project-image:hover img {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+.single-panel-project .project-info {
+    flex: 1; /* Take up remaining space */
+    padding: 25px;
+    text-align: left; /* Ensure text is left-aligned */
+    z-index: 0; /* Ensure the text is below the shine */
+    min-width: 0; /* Allow text to wrap properly within the flex container */
+}
+
+.single-panel-project .project-info h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #0465ba; /* Main accent color */
+}
+
+.single-panel-project .project-info h3 a {
+    color: inherit; /* Inherit the color from h3 */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+.single-panel-project .project-info h3 a:hover {
+    color: #034a8f; /* Darker shade on hover */
+}
+
+.single-panel-project .project-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px; /* Add space between paragraphs */
+    text-align: left; /* Ensure paragraphs are left-aligned */
+    word-break: normal; /* Allow normal word breaking */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    white-space: normal; /* Allow text to wrap naturally */
+    max-width: 100%; /* Ensure text uses the full width of the container */
+}
+
+.single-panel-project .project-info p strong {
+    color: #0465ba; /* Accent color for technologies */
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
     /* Adjust for large tablets and small desktops */
