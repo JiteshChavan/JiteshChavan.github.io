@@ -24,7 +24,7 @@
             <div class="photo-container">
                 <img src="./images/photo.jpg" alt="Photograph" class="profile-photo">
             </div>
-            <h2 class="name">Jitesh Chavan (jsc78@njit.edu)</h2>
+            <h2 class="name">Jitesh Chavan</h2>
             <h3 class="subheading">Generative AI | Computer Vision | NLP</h3>
             <!-- Icon Container -->
         <div class="icon-container">
@@ -43,23 +43,18 @@
         <!-- Right Section (Glossy Rectangle) -->
         <div class="glossy-rectangle">
             <h2>About Me</h2>
-            <p>I am a Computer Science graduate student at the New Jersey Institute of Technology.
-                My research focuses Machine Learning Algorithms, in particular Generative Modeling and connections to Mathematics, and Engineering and Scaling Novel Foundation Models with an emphasis on their application in the domain of Large Language Models to model Cross-Modal and Multi-Modal generative tasks.
+            <p>I am a Computer Science Graduate student at the NJIT. My research focuses Machine Learning Algorithms, in particular Generative Modeling and connections to Mathematics and Physics. I work on engineering and scaling Foundation Models with an emphasis on their applications for generative tasks in non sequential modalities (images, protien structures) and for Large Language Models.   
             </p>
             <p>
-                I have experience scaling Autoregressive Generative Models for Natural Language Processing, Score-Based and Flow Matching (denoising score matching and diffusion) models for Cross-Modal generative modeling, Variational Autoencoders and Generative Adversarial Networks.
-            </p>
-            
+                As a Graduate Student Researcher at NJIT, I have extensively worked on Physics based Generative Foundation Models including Flow Matching, Score-Matching, Denoising Diffusion Models for downstream generative tasks such as text/stroke guided image generation and image inpainting via stochastic interpolants & control net frameworks.
+                Before NJIT, I earned a B.Tech. in Electronics at VNIT, where I worked with <a href="https://dblp.org/pid/34/7796.html">K. M. Bhurchandi</a> on Computer Vision models for memory constrained single board computers, adversarial training and Variational Auto Encoders.
+            </p> 
             <p>
-               I am currently preparing a research draft for the <a href="https://aaai.org/conference/aaai/aaai-26/main-technical-track-call/" target="_blank" rel="noopener noreferrer">AAAI 2026 conference</a>, focused on eliminating causal and directional bias in state space (Mamba) models by proposing architectural modifications
+               I am currently preparing a research draft on eliminating causal inductive bias in state space (Mamba) models by proposing architectural modifications
                 to generalize them for generative modeling in non-sequential modalities such as 3D Gaussian Splatting and image generation.
-            </p>
-            
+            </p>           
             <p>
-                I recently Engineered a 1.2B parameter Elucidated Latent Diffusion Sparse Transformer Model for text guided image generation achieving state of the art results at a micro-budget.
-                You can find more details about the project below.
-            <p>
-                Prior to this I worked at Ford Motor Company as a Software Developer, where I was responsible for implementation BERT variants of NLP models to help evaluate the recommendation system and optimizing REST APIs for Ford's ANZ region e-commerce platform.
+                Prior to this I worked at Ford Motor Company as a Software Engineer on a Machine Learning Team, where I was responsible for instrumentation of transformer encoder backbones and BERT based NLP models for the e-commerce platform recommendation system and its evaluation pipeline.
             </p>
 
             <p>
@@ -71,6 +66,43 @@
         </div>
     </section>
 
+    <section id="experiences">
+        <h2>Experiences</h2>
+        <div class="experience-item">
+            <p class="company">Graduate Student Researcher</p> <!-- Company name moved here -->
+            <h3>Ying Wu College of Computing (YWCC), NJIT </h3> <!-- Role moved here -->
+            <p class="location-duration">Newark, NJ, USA | Feb 2024 - May 2025</p>
+            <ul class="responsibilities">
+                Prototyped generative foundation models (Flow Matching, Diffusion Models, VAEs, GANs) for cross‑modal tasks including text/stroke guided image generation and image inpainting, leveraging stochastic interpolants and control net frameworks.
+                Proposed architectural modifications to mitigate casual inductive bias in Mamba SSM backbones for generative tasks in non‑sequential modalities like images; resulting in a first‑author publication under preparation.
+
+                Built a data processing pipeline to support research in LLMs for symbolic mathematics and calculus problem solving.
+
+            </ul>
+        </div>
+        <div class="experience-item">
+            <p class="company">Software Engineer - Machine Learning Team</p> <!-- Company name moved here -->
+            <h3>Ford Motor Company</h3> <!-- Role moved here -->
+            <p class="location-duration">Chennai, Tamil Nadu, India | July 2021 - Dec 2022</p>
+            <ul class="responsibilities">
+                At Ford Motor Company, I optimized REST API latency by 58% on the APAC e-commerce platform through cross-functional collaboration with ML and backend teams.
+                I developed a BERT-based NLP evaluation pipeline to enhance recommendation quality, contributing to a 22% increase in transactions and 38.6% traffic growth.
+                Additionally, I built scalable backend systems in Spring Boot/MVC and prototyped ML-driven content management workflows within the SAP Hybris framework as part of Ford’s “Shop–Buy–Own” digital initiative.
+            </ul>
+        </div>
+        <div class="experience-item">
+            <p class="company">Research Assistant, Computer Vision Lab</p> <!-- Company name moved here -->
+            <h3>Visvesvaraya National Institute of Technology</h3> <!-- Role moved here -->
+            <p class="location-duration">Nagpur, Maharashtra, India | July 2020 - May 2021</p>
+            <ul class="responsibilities">
+                Researched real-time object detection and recognition systems on memory-constrained single-board computers,
+                Which helped optimize the <strong>Haar Cascade Classifier</strong> in C for single-board computer constraints, improving efficiency in resource-limited environments for the Final Year Undergrad Project : Real Time Face detection
+                and recognition using Multi-Tasked Cascaded Convolutional Neural Network.
+                Also researched synthetic dataset generation using <strong>Generative Adversarial Networks (GANs)</strong> for computer vision applications.
+            </ul>
+        </div>
+    </section>
+    
     <section id="projects">
         <h2>Projects</h2>
         <div class="projects-container">
@@ -181,41 +213,7 @@
         </div>
     </section>
 
-    <section id="experiences">
-        <h2>Experiences</h2>
-        <div class="experience-item">
-            <p class="company">Graduate Student Researcher</p> <!-- Company name moved here -->
-            <h3>Guttenberg Information Technologies Center (GITC), NJIT </h3> <!-- Role moved here -->
-            <p class="location-duration">Newark, NJ, USA | Feb 2024 - May 2025</p>
-            <ul class="responsibilities">
-                Implemented cross-modal generative models including Flow Matching, diffusion, VAEs, GANs, and SDE‑based models for text guided Image
-                Generation.
-                Prototyped alternatives to Transformer backbones using state space models (Mamba/S6) with spatial‑frequency domain transformations.
-                Built a data processing pipeline to support research in LLMs for symbolic mathematics and calculus problem solving.
-            </ul>
-        </div>
-        <div class="experience-item">
-            <p class="company">Software Engineer - Machine Learning Team</p> <!-- Company name moved here -->
-            <h3>Ford Motor Company</h3> <!-- Role moved here -->
-            <p class="location-duration">Chennai, Tamil Nadu, India | July 2021 - Dec 2022</p>
-            <ul class="responsibilities">
-                At Ford Motor Company, I optimized REST API latency by 58% on the APAC e-commerce platform through cross-functional collaboration with ML and backend teams.
-                I developed a BERT-based NLP evaluation pipeline to enhance recommendation quality, contributing to a 22% increase in transactions and 38.6% traffic growth.
-                Additionally, I built scalable backend systems in Spring Boot/MVC and prototyped ML-driven content management workflows within the SAP Hybris framework as part of Ford’s “Shop–Buy–Own” digital initiative.
-            </ul>
-        </div>
-        <div class="experience-item">
-            <p class="company">Research Assistant, Computer Vision Lab</p> <!-- Company name moved here -->
-            <h3>Visvesvaraya National Institute of Technology</h3> <!-- Role moved here -->
-            <p class="location-duration">Nagpur, Maharashtra, India | July 2020 - May 2021</p>
-            <ul class="responsibilities">
-                Researched real-time object detection and recognition systems on memory-constrained single-board computers,
-                Which helped optimize the <strong>Haar Cascade Classifier</strong> in C for single-board computer constraints, improving efficiency in resource-limited environments for the Final Year Undergrad Project : Real Time Face detection
-                and recognition using Multi-Tasked Cascaded Convolutional Neural Network.
-                Also researched synthetic dataset generation using <strong>Generative Adversarial Networks (GANs)</strong> for computer vision applications.
-            </ul>
-        </div>
-    </section>
+    
     
 
     <section id="skills">
