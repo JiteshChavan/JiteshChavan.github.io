@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background: #f0f8ff;
+    background: #f0f8ff; /* Light blue background replaced with a soft off-white to complement green */
     color: #333;
     max-width: 1400px;
     margin: 0 auto;
@@ -42,7 +42,7 @@ body {
 }
 
 #navbar ul li a {
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for links */
     text-decoration: none;
     padding: 15px 20px;
     display: block;
@@ -53,7 +53,7 @@ body {
 }
 
 #navbar ul li a:hover {
-    background-color: #0465ba;
+    background-color: #85b800; /* Darker lime green on hover */
     color: #fff;
 }
 
@@ -81,7 +81,7 @@ section h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     font-weight: 600;
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for headings */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -99,7 +99,7 @@ section:nth-child(odd) {
 }
 
 section:nth-child(even) {
-    background: #e6f0ff;
+    background: #f5fff0; /* Lightest lime green tint for the alternating background */
 }
 
 /* Skills Section */
@@ -127,7 +127,7 @@ section:nth-child(even) {
 
 .skill-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(4, 101, 186, 0.3);
+    box-shadow: 0 8px 16px rgba(133, 184, 0, 0.3); /* Darker lime green shadow on hover */
 }
 
 .skill-item::before {
@@ -166,7 +166,7 @@ section:nth-child(even) {
     margin-top: 10px;
     font-size: 1.1em;
     font-weight: 500;
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for text */
 }
 
 /* About Me Section */
@@ -196,8 +196,8 @@ section:nth-child(even) {
     height: 250px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid rgba(4, 101, 186, 0.3);
-    box-shadow: 0 4px 10px rgba(4, 101, 186, 0.2);
+    border: 2px solid rgba(133, 184, 0, 0.3); /* Darker lime green tint for border */
+    box-shadow: 0 4px 10px rgba(133, 184, 0, 0.2); /* Darker lime green shadow */
     margin-bottom: 20px;
 }
 
@@ -210,7 +210,7 @@ section:nth-child(even) {
 #about .name {
     font-size: 2em;
     font-weight: 700;
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for name */
     margin-bottom: 10px;
     text-align: center;
 }
@@ -218,7 +218,7 @@ section:nth-child(even) {
 #about .subheading {
     font-size: 1.2em;
     font-weight: 625;
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for subheading */
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
@@ -249,7 +249,7 @@ section:nth-child(even) {
 }
 
 .icon-link:hover {
-    background-color: #0465ba;
+    background-color: #85b800; /* Darker lime green on hover */
     transform: translateY(-5px);
 }
 
@@ -261,10 +261,10 @@ section:nth-child(even) {
     flex: 1;
     max-width: 800px;
     padding: 20px;
-    background: #0465ba;
+    background: #85b800; /* Darker lime green for the background */
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(4, 101, 186, 0.6);
-    border: 1px solid rgba(4, 101, 186, 0.8);
+    box-shadow: 0 4px 15px rgba(133, 184, 0, 0.6); /* Darker lime green shadow */
+    border: 1px solid rgba(133, 184, 0, 0.8); /* Darker lime green border */
     backdrop-filter: blur(5px);
     text-align: left;
     box-sizing: border-box;
@@ -375,7 +375,7 @@ section:nth-child(even) {
     flex-direction: column;
     width: 400px;
     border-radius: 15px 0 0 15px;
-    background: #f0f8ff;
+    background: #f5fff0; /* Lightest lime green tint for project image background */
     padding: 10px;
     flex-shrink: 0;
 }
@@ -415,7 +415,7 @@ section:nth-child(even) {
 .project-info h3 {
     font-size: 1.8em;
     margin-bottom: 15px;
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for project headings */
 }
 
 .project-info h3 a {
@@ -425,7 +425,7 @@ section:nth-child(even) {
 }
 
 .project-info h3 a:hover {
-    color: #034a8f;
+    color: #6a9200; /* Even darker lime green on hover */
 }
 
 .project-info p {
@@ -441,7 +441,7 @@ section:nth-child(even) {
 }
 
 .project-info p strong {
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for strong text */
 }
 
 .project-3-images .project-image {
@@ -450,7 +450,7 @@ section:nth-child(even) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f0f8ff;
+    background: #f5fff0; /* Lightest lime green tint for project image background */
     overflow: hidden;
     margin-bottom: 10px;
 }
@@ -481,7 +481,7 @@ section:nth-child(even) {
 .experience-item .company {
     font-size: 1.8em;
     font-weight: 600;
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for company name */
     margin-bottom: 5px;
 }
 
@@ -507,7 +507,7 @@ section:nth-child(even) {
 }
 
 .experience-item .responsibilities strong {
-    color: #0465ba;
+    color: #85b800; /* Darker lime green for strong text */
 }
 
 /* Courses Section */
@@ -562,14 +562,14 @@ section:nth-child(even) {
 .course-link {
     display: block; /* Make the link a block element */
     font-size: 0.8em; /* Smaller font size */
-    color: #0465ba; /* Accent color for the link */
+    color: #85b800; /* Accent color for the link */
     text-decoration: none; /* Remove underline */
     margin-top: 10px; /* Space between course name and link */
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .course-link:hover {
-    color: #034a8f; /* Darker shade on hover */
+    color: #6a9200; /* Darker shade on hover */
     text-decoration: underline; /* Add underline on hover */
 }
 
@@ -590,7 +590,7 @@ section:nth-child(even) {
     width: 400px; /* Fixed width for the image panel */
     height: auto; /* Maintain aspect ratio */
     border-radius: 15px 0 0 15px; /* Soft corners on the left */
-    background: #f0f8ff; /* Match the background color to blend with the section */
+    background: #f5fff0; /* Lightest lime green tint for image background */
     padding: 10px; /* Add padding to prevent images from touching the edges */
     flex-shrink: 0; /* Prevent the image container from shrinking */
     cursor: pointer; /* Change cursor to pointer on hover */
@@ -619,7 +619,7 @@ section:nth-child(even) {
 .single-panel-project .project-info h3 {
     font-size: 1.8em;
     margin-bottom: 15px;
-    color: #0465ba; /* Main accent color */
+    color: #85b800; /* Main accent color */
 }
 
 .single-panel-project .project-info h3 a {
@@ -629,7 +629,7 @@ section:nth-child(even) {
 }
 
 .single-panel-project .project-info h3 a:hover {
-    color: #034a8f; /* Darker shade on hover */
+    color: #6a9200; /* Darker shade on hover */
 }
 
 .single-panel-project .project-info p {
@@ -645,7 +645,7 @@ section:nth-child(even) {
 }
 
 .single-panel-project .project-info p strong {
-    color: #0465ba; /* Accent color for technologies */
+    color: #85b800; /* Accent color for technologies */
 }
 
 /* Responsive Design */
