@@ -461,8 +461,8 @@ section:nth-child(even) {
     object-fit: fill;
 }
 
-/* Experiences Section */
-#experiences {
+/* experience Section */
+#experience {
     padding: 40px 10px;
     background: #ffffff;
     text-align: left;
