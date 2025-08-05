@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>FlowMatching.ipynb</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>FlowMatching</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7525,7 +7525,39 @@ a.anchor-link {
 </ul>
 <p><strong>Pre requisites</strong>: I assume that you have basic background knowledge in vector calculus and probability theory.</p>
 <p><strong>Acknowledgements</strong>: The content of this tutorial is the result of efforts made to understand MIT 6.S184: Generative AI with Stochastic Differential Equations by <a href="https://www.peterholderrieth.com/">Peter Holderrieth</a> and the Flow Matching paper by <a href="https://scholar.google.com/citations?user=vyteiT4AAAAJ&amp;hl=en">Yaron Lipman</a></p>
+<h4 id="In-this-article-we-will-formalize-%22generating-an-image%22-and-Construction-of-Flow-and-Diffusion-Models.">In this article we will formalize "generating an image" and Construction of Flow and Diffusion Models.<a class="anchor-link" href="#In-this-article-we-will-formalize-%22generating-an-image%22-and-Construction-of-Flow-and-Diffusion-Models.">¶</a></h4><h2 id="1.-From-Generation-to-Sampling">1. From Generation to Sampling<a class="anchor-link" href="#1.-From-Generation-to-Sampling">¶</a></h2><p><strong>Goal</strong> : Formalize what it means to generate something.</p>
+<p>1.1 We represent objects that we want to generate as vectors</p>
+<p>$$
+z \in \mathbb{R}^d
+$$</p>
+<ul>
+<li><p>Images are generally represented as a vector $z$ in a three-dimensional vector space.</p>
+<p>$$z \in \mathbb{R}^{H \times W \times 3}$$</p>
+<p>Where $H$ is the height of the image in pixels, $W$ is the width, and 3 represents the three color channels (Red, Green, Blue).
+<br/><br/></p>
+</li>
+<li><p>Videos are represented in a similar manner as a vector $z$ in a four-dimensional vector space.</p>
+<p>$$z \in \mathbb{R}^{T \times H \times W \times 3}$$</p>
+<p>Where $T$ represents the different frames along the temporal axis of the image, where each frame is an image.
+<br/><br/></p>
+</li>
+<li><p>Molecular Structures, in a similar manner:</p>
+<p>$$z \in \mathbb{R}^{N \times 3}$$</p>
+<p>Where $N$ represents the number of atoms, and each atom has 3 co-ordinates.</p>
+</li>
+</ul>
+<p>For a generative task in any modality, be it Protein Structures or Images or Videos, our goal is to generate a corresponding vector representation.</p>
 <p>The article is in progress, thank you for your patience :)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=771c669b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>
