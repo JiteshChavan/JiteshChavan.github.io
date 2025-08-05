@@ -7526,19 +7526,18 @@ a.anchor-link {
 <p><strong>Pre requisites</strong>: I assume that you have basic background knowledge in vector calculus and probability theory.</p>
 <p><strong>Acknowledgements</strong>: The content of this tutorial is the result of efforts made to understand MIT 6.S184: Generative AI with Stochastic Differential Equations by <a href="https://www.peterholderrieth.com/">Peter Holderrieth</a> and the Flow Matching paper by <a href="https://scholar.google.com/citations?user=vyteiT4AAAAJ&amp;hl=en">Yaron Lipman</a></p>
 <h4 id="In-this-article-we-will-formalize-%22generating-an-image%22-and-Construction-of-Flow-and-Diffusion-Models.">In this article we will formalize "generating an image" and Construction of Flow and Diffusion Models.<a class="anchor-link" href="#In-this-article-we-will-formalize-%22generating-an-image%22-and-Construction-of-Flow-and-Diffusion-Models.">¶</a></h4><h2 id="1.-From-Generation-to-Sampling">1. From Generation to Sampling<a class="anchor-link" href="#1.-From-Generation-to-Sampling">¶</a></h2><p><strong>Goal</strong> : Formalize what it means to generate something.</p>
-<p>1.1 We represent objects that we want to generate as vectors</p>
-<p>$$
+<h5 id="1.1-We-represent-objects-that-we-want-to-generate-as-vectors">1.1 We represent objects that we want to generate as vectors<a class="anchor-link" href="#1.1-We-represent-objects-that-we-want-to-generate-as-vectors">¶</a></h5><p>$$
 z \in \mathbb{R}^d
 $$</p>
 <ul>
-<li><p>Images are generally represented as a vector $z$ in a three-dimensional vector space.</p>
+<li><p>Images are generally represented as a vector $z$ in a three-dimensional vector space:</p>
 <p>$$z \in \mathbb{R}^{H \times W \times 3}$$</p>
 <p>Where $H$ is the height of the image in pixels, $W$ is the width, and 3 represents the three color channels (Red, Green, Blue).
 <br/><br/></p>
 </li>
-<li><p>Videos are represented in a similar manner as a vector $z$ in a four-dimensional vector space.</p>
+<li><p>Videos are represented in a similar manner as a vector $z$ in a four-dimensional vector space:</p>
 <p>$$z \in \mathbb{R}^{T \times H \times W \times 3}$$</p>
-<p>Where $T$ represents the different frames along the temporal axis of the image, where each frame is an image.
+<p>Where $T$ represents different frames along the temporal axis of the video, where each frame is an image.
 <br/><br/></p>
 </li>
 <li><p>Molecular Structures, in a similar manner:</p>
@@ -7546,7 +7545,27 @@ $$</p>
 <p>Where $N$ represents the number of atoms, and each atom has 3 co-ordinates.</p>
 </li>
 </ul>
-<p>For a generative task in any modality, be it Protein Structures or Images or Videos, our goal is to generate a corresponding vector representation.</p>
+<p>For a generative task in any modality, be it Protein Structures or Images or Videos, our goal is to generate a corresponding vector representation.
+<br/><br/></p>
+<h5 id="1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">1.2 Now let's think about what it mean to successfully <strong>generate</strong> something.<a class="anchor-link" href="#1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">¶</a></h5><center>  Prompt: "Picture of a wolf"</center>
+<table>
+<thead>
+<tr>
+<th><img alt="Noise" src="./blogAssets/0_noise.png"/></th>
+<th><img alt="Frozen River" src="./blogAssets/1_river.png"/></th>
+<th><img alt="Eagle in Snow" src="./blogAssets/2_eagle.png"/></th>
+<th><img alt="Wolf in Snow" src="./blogAssets/wolf.png"/></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Useless</td>
+<td>Bad</td>
+<td>Wrong subject, Not Wolf (better than just a river)</td>
+<td>Great!</td>
+</tr>
+</tbody>
+</table>
 <p>The article is in progress, thank you for your patience :)</p>
 </div>
 </div>
