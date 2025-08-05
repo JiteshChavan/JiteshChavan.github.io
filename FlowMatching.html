@@ -7559,14 +7559,36 @@ $$</p>
 </thead>
 <tbody>
 <tr>
-<td>Useless</td>
-<td>Bad</td>
-<td>Wrong subject, Not Wolf (better than just a river)</td>
-<td>Great!</td>
+<td><center> Useless </center></td>
+<td><center>Bad (better than just noise)</center></td>
+<td><center>Wrong subject, Not Wolf (better than just a river)</center></td>
+<td><center> Great! </center></td>
 </tr>
 </tbody>
 </table>
-<p>The article is in progress, thank you for your patience :)</p>
+<p>We can qualitatively rank these images on how good they align with the prompt but these are subjective statements - How do we <em>mathematically formalize</em> these qualitative statements?</p>
+<p>We formalize these subjective statements by resorting to the language of <strong>probability theory</strong>, where we introduce this object called <strong>data distribution</strong> that converts the statement of "how good something is" to "how likely something is on a specific data distribution".</p>
+<p>Assuming our data distribution is all the images on the internet, we pose the evaluation of images as "how <em>likely</em> are we to find this image on the internet, given this specific prompt?"</p>
+<center>  Prompt: "Picture of a wolf"</center>
+<table>
+<thead>
+<tr>
+<th><img alt="Noise" src="./blogAssets/0_noise.png"/></th>
+<th><img alt="Frozen River" src="./blogAssets/1_river.png"/></th>
+<th><img alt="Eagle in Snow" src="./blogAssets/2_eagle.png"/></th>
+<th><img alt="Wolf in Snow" src="./blogAssets/wolf.png"/></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><center> Impossible </center></td>
+<td><center>Extremely Rare</center></td>
+<td><center>Unlikely</center></td>
+<td><center> Very Likely! </center></td>
+</tr>
+</tbody>
+</table>
+<h4 id="How-good-an-image-is-$%5Cmapsto$-How-likely-it-is-under-the-data-distribution">How good an image is $\mapsto$ How likely it is under the data distribution<a class="anchor-link" href="#How-good-an-image-is-$%5Cmapsto$-How-likely-it-is-under-the-data-distribution">¶</a></h4><p>The article is in progress, thank you for your patience :)</p>
 </div>
 </div>
 </div>
