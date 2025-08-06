@@ -7526,11 +7526,11 @@ a.anchor-link {
 <p><strong>Pre requisites</strong>: I assume that you have basic background knowledge in vector calculus and probability theory.</p>
 <p><strong>Acknowledgements</strong>: The content of this tutorial is the result of efforts made to understand MIT 6.S184: Generative AI with Stochastic Differential Equations by <a href="https://www.peterholderrieth.com/">Peter Holderrieth</a> and the Flow Matching paper by <a href="https://scholar.google.com/citations?user=vyteiT4AAAAJ&amp;hl=en">Yaron Lipman</a></p>
 <h4 id="In-this-article-we-will-formalize-%22generating-an-image%22-and-Construction-of-Flow-and-Diffusion-Models.">In this article we will formalize "generating an image" and Construction of Flow and Diffusion Models.<a class="anchor-link" href="#In-this-article-we-will-formalize-%22generating-an-image%22-and-Construction-of-Flow-and-Diffusion-Models.">¶</a></h4><h2 id="1.-From-Generation-to-Sampling">1. From Generation to Sampling<a class="anchor-link" href="#1.-From-Generation-to-Sampling">¶</a></h2><p><strong>Goal</strong> : Formalize what it means to generate something.</p>
-<h5 id="1.1-We-represent-objects-that-we-want-to-generate-as-vectors">1.1 We represent objects that we want to generate as vectors<a class="anchor-link" href="#1.1-We-represent-objects-that-we-want-to-generate-as-vectors">¶</a></h5><p>$$
+<h4 id="1.1-We-represent-objects-that-we-want-to-generate-as-vectors">1.1 We represent objects that we want to generate as vectors<a class="anchor-link" href="#1.1-We-represent-objects-that-we-want-to-generate-as-vectors">¶</a></h4><p>$$
 z \in \mathbb{R}^d
 $$</p>
 <ul>
-<li><p>Images are generally represented as a vector $z$ in a three-dimensional vector space:</p>
+<li><p>Images are generally represented as a vector $z$ in vector space $\mathbb{R}^{H \times W \times 3}$:</p>
 <p>$$z \in \mathbb{R}^{H \times W \times 3}$$</p>
 <p>Where $H$ is the height of the image in pixels, $W$ is the width, and 3 represents the three color channels (Red, Green, Blue).
 <br/><br/></p>
@@ -7547,7 +7547,7 @@ $$</p>
 </ul>
 <p>For a generative task in any modality, be it Protein Structures or Images or Videos, our goal is to generate a corresponding vector representation.
 <br/><br/></p>
-<h5 id="1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">1.2 Now let's think about what it mean to successfully <strong>generate</strong> something.<a class="anchor-link" href="#1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">¶</a></h5><center>  Prompt: "Picture of a wolf"</center>
+<h4 id="1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">1.2 Now let's think about what it mean to successfully <strong>generate</strong> something.<a class="anchor-link" href="#1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">¶</a></h4><center>  Prompt: "Picture of a wolf"</center>
 <table>
 <thead>
 <tr>
@@ -7567,8 +7567,9 @@ $$</p>
 </tbody>
 </table>
 <p>We can qualitatively rank these images on how good they align with the prompt but these are subjective statements - How do we <em>mathematically formalize</em> these qualitative statements?</p>
-<p>We formalize these subjective statements by resorting to the language of <strong>probability theory</strong>, where we introduce this object called <strong>data distribution</strong> that converts the statement of "how good something is" to "how likely something is on a specific data distribution".</p>
-<p>Assuming our data distribution is all the images on the internet, we pose the evaluation of images as "how <em>likely</em> are we to find this image on the internet, given this specific prompt?"</p>
+<p>In the domain of generative modeling, the language of <strong>probability theory</strong> sees prolific use to <em>mathematically  formalize</em> "how good a generated sample is".</p>
+<p>We introduce this object called <strong>data distribution</strong> that converts the statement of "how good something is" to "how likely something is on a specific data distribution".</p>
+<p>Assuming our data distribution is all the images on the internet, we pose the evaluation of images (rather samples) as "how <em>likely</em> are we to find this image on the internet, given this specific prompt?"</p>
 <center>  Prompt: "Picture of a wolf"</center>
 <table>
 <thead>
@@ -7588,7 +7589,24 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h4 id="How-good-an-image-is-$%5Cmapsto$-How-likely-it-is-under-the-data-distribution">How good an image is $\mapsto$ How likely it is under the data distribution<a class="anchor-link" href="#How-good-an-image-is-$%5Cmapsto$-How-likely-it-is-under-the-data-distribution">¶</a></h4><p>The article is in progress, thank you for your patience :)</p>
+<div style="border: 1px solid #ccc; padding: 10px; text-align: center; margin: 15px auto;">
+<h4 style="margin: 0;">How good an image is → How likely it is under the data distribution</h4>
+</div>
+<p>With that we have translated subjective evaluations, into statements of probability theory.</p>
+<h4 id="1.3-Formalizing-Generation-as-Sampling-from-the-Data-Distribution">1.3 Formalizing Generation as Sampling from the Data Distribution<a class="anchor-link" href="#1.3-Formalizing-Generation-as-Sampling-from-the-Data-Distribution">¶</a></h4><p><strong>Data Distribution</strong>: Distribution of objects that we want to generate: $P_{data}$</p>
+<p>In the case of continuous variables, data distributions are typically represented by probability density functions (PDFs). Hence, we will refer to the data distribution and its corresponding density function interchangeably as $P_{data}$.</p>
+<p>$$\textbf{Probability Density} P_{data} : z \in \mathbb{R}^d \rightarrow \mathbb{R}_{\ge 0}$$</p>
+<p>$$z \rightarrow P_{data}(z)$$</p>
+<p>$P_{data}$ goes from the vector space of $\mathbb{R}^d$, which is space of our objects, and gives you a non negative number.</p>
+<p>Given an object $z$, it gives you probability of how likely that object is under $P_{data}$</p>
+<p>From this context we can establish that, <em>generating high-quality samples</em> is equivalent to drawing samples from the target distribution $P_{data}$, i.e., generating samples $z \in \mathbb{R}^d$ for which $P_{data}(z)$ is high.</p>
+<p><strong>Note</strong> : We do not know what $P_{data}$ is, we postulate it as some distribution that we want to sample objects from. In case of a model that is supposed to generate images of dogs we postulate there to be a distribution $P_{data}$ that assigns high probability to images of dogs and lower probabilities to images that do not resemble dogs. Despite not having access to the entire distribution nor to the analytical form for its <em>PDF</em>, which is intractable given high dimensionality of vector space $\mathbb{R}^d$, we devise a framework that lets us sample objects $z$ from $P_{data}$ relying on sparse samples (our dataset) of this continuous distribution over $\mathbb{R}^d$.</p>
+<p>With that, we have formalized <em>Generation as Sampling</em> $P_{data}$
+$$
+    z \sim P_{data} \implies \text{z is a high quality image i.e., sample with high probability under}\space P_{data}
+$$</p>
+<p>If we somehow do this correctly, we should have high quality samples $z$</p>
+<p>The article is in progress, thank you for your patience :)</p>
 </div>
 </div>
 </div>
