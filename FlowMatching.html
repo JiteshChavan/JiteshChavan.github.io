@@ -7547,7 +7547,7 @@ $$</p>
 </ul>
 <p>For a generative task in any modality, be it Protein Structures or Images or Videos, our goal is to generate a corresponding vector representation.
 <br/><br/></p>
-<h4 id="1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">1.2 Now let's think about what it mean to successfully <strong>generate</strong> something.<a class="anchor-link" href="#1.2-Now-let's-think-about-what-it-mean-to-successfully-generate-something.">¶</a></h4><center>  Prompt: "Picture of a wolf"</center>
+<h4 id="1.2-Now-let's-think-about-what-it-means-to-successfully-generate-something.">1.2 Now let's think about what it means to successfully <strong>generate</strong> something.<a class="anchor-link" href="#1.2-Now-let's-think-about-what-it-means-to-successfully-generate-something.">¶</a></h4><center>  Prompt: "Picture of a wolf"</center>
 <table>
 <thead>
 <tr>
@@ -7600,12 +7600,17 @@ $$</p>
 <p>$P_{data}$ goes from the vector space of $\mathbb{R}^d$, which is space of our objects, and gives you a non negative number.</p>
 <p>Given an object $z$, it gives you probability of how likely that object is under $P_{data}$</p>
 <p>From this context we can establish that, <em>generating high-quality samples</em> is equivalent to drawing samples from the target distribution $P_{data}$, i.e., generating samples $z \in \mathbb{R}^d$ for which $P_{data}(z)$ is high.</p>
-<p><strong>Note</strong> : We do not know what $P_{data}$ is, we postulate it as some distribution that we want to sample objects from. In case of a model that is supposed to generate images of dogs we postulate there to be a distribution $P_{data}$ that assigns high probability to images of dogs and lower probabilities to images that do not resemble dogs. Despite not having access to the entire distribution nor to the analytical form for its <em>PDF</em>, which is intractable given high dimensionality of vector space $\mathbb{R}^d$, we devise a framework that lets us sample objects $z$ from $P_{data}$ relying on sparse samples (our dataset) of this continuous distribution over $\mathbb{R}^d$.</p>
-<p>With that, we have formalized <em>Generation as Sampling</em> $P_{data}$
+<p><strong>Note</strong> : We do not know what $P_{data}$ is, we postulate it as some distribution that we want to sample objects from. In case of a model that is supposed to generate images of dogs we postulate there to be a distribution $P_{data}$ that assigns high probability to images of dogs and lower probabilities to images that do not resemble dogs. Despite not having access to the entire continuous distribution nor to the analytical form for its <em>PDF</em>, which is intractable given high dimensionality of vector space $\mathbb{R}^d$, we devise a framework that lets us sample objects $z$ from $P_{data}$ relying on sparse samples from a subset (our dataset) of this continuous distribution over $\mathbb{R}^d$.</p>
+<p>With that, we have formalized <strong>Generation as Sampling</strong> $P_{data}$
 $$
     z \sim P_{data} \implies \text{z is a high quality image i.e., sample with high probability under}\space P_{data}
 $$</p>
-<p>If we somehow do this correctly, we should have high quality samples $z$</p>
+<p>We roll the dice and get a sample $z \sim P_{data}$.</p>
+<p>If we somehow do this correctly, we should have high quality samples $z$ that yield high likelihood or probability under the postulated $P_{data}$</p>
+<h4 id="1.4-Dataset">1.4 Dataset<a class="anchor-link" href="#1.4-Dataset">¶</a></h4><p>As discussed before we do not have access to the entire target distribution $P_{data}$, nor to the analytical expression for it's PDF, however we do have access to a dataset
+$$\mathcal{D} = \{z_i\}_{i=1}^N \sim P_{data}, \quad z_i \in \mathbb{R}^d$$
+that consists of independent and identically distributed finite samples $\sim P_{data}$.</p>
+<p>As a consequence, in practice we compute $\text{Monte Carlo}$ estimates of the expected loss and gradients over $P_{data}$ by using samples from $\mathcal{D}$, to optimize a network, as we will discuss further.</p>
 <p>The article is in progress, thank you for your patience :)</p>
 </div>
 </div>
