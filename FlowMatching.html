@@ -7595,7 +7595,7 @@ $$</p>
 <p>With that we have translated subjective evaluations, into statements of probability theory.</p>
 <h4 id="1.3-Formalizing-Generation-as-Sampling-from-the-Data-Distribution">1.3 Formalizing Generation as Sampling from the Data Distribution<a class="anchor-link" href="#1.3-Formalizing-Generation-as-Sampling-from-the-Data-Distribution">¶</a></h4><p><strong>Data Distribution</strong>: Distribution of objects that we want to generate: $P_{data}$</p>
 <p>In the case of continuous variables, data distributions are typically represented by probability density functions (PDFs). Hence, we will refer to the data distribution and its corresponding density function interchangeably as $P_{data}$.</p>
-<p>$$\textbf{Probability Density} P_{data} : z \in \mathbb{R}^d \rightarrow \mathbb{R}_{\ge 0}$$</p>
+<p>$$\textbf{Probability Density}\space P_{data} : z \in \mathbb{R}^d \rightarrow \mathbb{R}_{\ge 0}$$</p>
 <p>$$z \rightarrow P_{data}(z)$$</p>
 <p>$P_{data}$ goes from the vector space of $\mathbb{R}^d$, which is space of our objects, and gives you a non negative number.</p>
 <p>Given an object $z$, it gives you probability of how likely that object is under $P_{data}$</p>
@@ -7611,6 +7611,38 @@ $$</p>
 $$\mathcal{D} = \{z_i\}_{i=1}^N \sim P_{data}, \quad z_i \in \mathbb{R}^d$$
 that consists of independent and identically distributed finite samples $\sim P_{data}$.</p>
 <p>As a consequence, in practice we compute $\text{Monte Carlo}$ estimates of the expected loss and gradients over $P_{data}$ by using samples from $\mathcal{D}$, to optimize a network, as we will discuss further.</p>
+<p>A dataset consists of <strong>finite samples</strong> from the data distribution:
+$$ z_{1},...,z_{N} \sim P_{data}$$</p>
+<p>Examples:</p>
+<ul>
+<li>Images : Publicly available images on the internet</li>
+<li>Videos : YouTube</li>
+<li>Protien Structures : Scientific Data (e.g. Protien Data Bank)</li>
+</ul>
+<h4 id="1.5-Conditional-and-Unconditional-Generation">1.5 Conditional and Unconditional Generation<a class="anchor-link" href="#1.5-Conditional-and-Unconditional-Generation">¶</a></h4><p><strong>Unconditional generation</strong> implies sampling from $P_{data}$ to generate high-quality samples that are more likely under $P_{data}$.</p>
+<p>$$Z \sim P_{data}$$</p>
+<p>$$\text{can be implicitly though of as fixed prompt generation, where samples are reflective of whatever the distribution} \space P_{data} \space \text{encapsulates}$$</p>
+<p><img alt="owl1" src="./blogAssets/1_owl.png"/><img alt="owl2" src="./blogAssets/2_owl.png"/><img alt="owl3" src="./blogAssets/3_owl.png"/></p>
+<p><strong>Conditional Generation</strong> allows to generate samples conditioned on a variable $y$, which can be verbose prompts like <em>"moonlit night over a lotus pond in starry night style"</em> or a class labels like "cat", "dog", "owl". For this we introduce the object called conditional data distribution denoted as $P_{data}(.|y)$. Which basically means what's the distribution of data given prompt $y$.</p>
+<p>Conditional Generation means sampling the conditional data distribution:
+$$ Z \sim P_{data}(.|y)$$
+$$ \text{for high quality samples from conditional generation, it is imperative that the data distribution encapsulates samples corresponding with the condtion}\space y$$</p>
+<table>
+<thead>
+<tr>
+<th><img alt="pond" src="./blogAssets/1_pond.png"/></th>
+<th><img alt="venice" src="./blogAssets/2_venice.png"/></th>
+<th><img alt="sunset" src="./blogAssets/3_sunset.png"/></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><center> Lotus Pond Starry Night </center></td>
+<td><center>Venice canals in water color</center></td>
+<td><center>Sunset snow covered mountains</center></td>
+</tr>
+</tbody>
+</table>
 <p>The article is in progress, thank you for your patience :)</p>
 </div>
 </div>
