@@ -7643,6 +7643,10 @@ $$ \text{for high quality samples from conditional generation, it is imperative 
 </tr>
 </tbody>
 </table>
+<h4 id="1.6-Generative-Models-generate-samples-from-data-distribution">1.6 Generative Models generate samples from data distribution<a class="anchor-link" href="#1.6-Generative-Models-generate-samples-from-data-distribution">¶</a></h4><p>A generative model converts samples from a known initial distribution (e.g. a standard gaussian distribution with 0 mean and diagonal identity matrix as its covariance matrix) into samples from the data distribution.</p>
+<p>$$x \sim p_{\text{init}} \rightarrow \text{Generative Model} \rightarrow z \sim p_{\text{data}}$$
+$$ \text{initial distribution} \space P_{init} = \mathcal{N} (0, I_{d})$$</p>
+<p>A generative model converts an intial distribution into data distribution!</p>
 <p>The article is in progress, thank you for your patience :)</p>
 </div>
 </div>
