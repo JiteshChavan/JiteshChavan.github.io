@@ -11,6 +11,7 @@
     <nav id="navbar">
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#publications">publications</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#Articles">Articles</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -64,6 +65,45 @@
             <p>
                 If you'd like to take a look at my CV, drop me an email : jchavan010@gmail.com
             </p>
+        </div>
+    </section>
+
+
+    <section id="publications">
+        <h2>Publications</h2>
+
+        
+        <div class="projects-container">
+
+            <div class="project-item">
+                <div class="project-images">
+                    <div class="project-image" onclick="window.open('https://arxiv.org/abs/2511.11243', '_blank')">
+                        <img src="./images/arcee_main_results.png" alt="Project 2">
+                    </div>
+                    <div class="project-image" onclick="window.open('https://arxiv.org/abs/2511.11243', '_blank')">
+                        <img src="./images/arcee_rc1qual.png" alt="Project 2 Additional Image">
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3><a href="https://arxiv.org/abs/2511.11243" target="_blank">Arcee: Differentiable Recurrent State Chain for Generative Vision Modeling with Mamba SSMs, first author, CVPR2026</a></h3>
+                    <p>
+                        Led design and implementation of Arcee, a structure-informed recurrent state chain for Mamba SSM vision backbones. Within a Flow Matching framework on CelebA-HQ 256×256, achieved up to 81% FID (82.81→15.33) and 88% KID (88.69→10.59) reductions over a naive Zigma baseline without adding parameters. Resulted in a first-author CVPR 2026 submission.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Lyapunov‑Based Stability Control for efficient sampling in Generative Flow Models,first author</a></h3>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Gradient Intervention for Mitigating Hallucinations in LLMs via Projection Layer Analysis,second author</a></h3>
+                </div>
+            </div>
+            <!-- Add more projects as needed -->
         </div>
     </section>
 
@@ -191,23 +231,25 @@
         <div class="experience-item">
             <p class="company">Graduate Student Researcher</p> <!-- Company name moved here -->
             <h3>Ying Wu College of Computing (YWCC), NJIT </h3> <!-- Role moved here -->
-            <p class="location-duration">Newark, NJ, USA | Feb 2024 - May 2025</p>
+            <p class="location-duration">Newark, NJ, USA | Feb 2024 - Dec 2025</p>
             <ul class="responsibilities">
-                <li>Prototyped generative foundation models (Flow Matching, Diffusion Models, VAEs, GANs) for cross‑modal tasks including text/stroke guided image generation and image inpainting, leveraging stochastic interpolants and control net frameworks</li>
-                <li>Proposed architectural modifications to mitigate casual inductive bias in Mamba SSM backbones for generative tasks in non‑sequential modalities like images; resulting in a first‑author publication under preparation</li></li>
-                <li>Built a data processing pipeline to support research in LLMs for symbolic mathematics and calculus problem solving.</li>
+                <li>Led design and implementation of Arcee, a structure-informed recurrent state chain for Mamba SSM vision backbones. Within a Flow Matching framework on CelebA-HQ 256×256, achieved up to 81% FID (82.81→15.33) and 88% KID (88.69→10.59) reductions over a naive Zigma baseline without adding parameters. Resulted in a first-author CVPR 2026 submission.</li>
+                <li>Prototyped generative foundation models (Flow Matching, diffusion models, VAEs, GANs) for cross-modal tasks including text-/stroke-guided image generation, image inpainting, and protein structure synthesis, using PyTorch, Diffusers, and ControlNet-style conditioning.</li>
+                <li>Implemented fused CUDA/C++ kernels to adapt Mamba selective-scan to non-sequential modalities, reducing training wall-clock and enabling efficient in-context learning.</li>
+                <li>Built large-scale data and training pipelines for generative models and LLMs for symbolic math reasoning: streaming datasets (30M+ samples), FSDP-based multi-GPU training, automated FID/KID evaluation, and experiment tracking with Weights & Biases.</li>
 
 
             </ul>
         </div>
         <div class="experience-item">
-            <p class="company">Software Engineer - Machine Learning Team</p> <!-- Company name moved here -->
+            <p class="company">Software Engineer (Machine Learning)</p> <!-- Company name moved here -->
             <h3>Ford Motor Company</h3> <!-- Role moved here -->
             <p class="location-duration">Chennai, Tamil Nadu, India | July 2021 - Dec 2022</p>
             <ul class="responsibilities">
-                <li>Designed a BERT‑based NLP pipeline to evaluate Ford’s recommendation system via semantic alignment against reference data</li>
-                <li>Integrated lightweight semantic transformer encoders in the recommendation pipeline, reducing inference latency by 58%.</li>
-                <li>Engineered scalable backend systems in Spring Boot/MVC to support ML‑driven personalization on the e‑commerce platform, driving a 22% increase in transactions and a 38% increase in personalized product interactions</li>
+                <li>Designed and implemented a BERT-based NLP evaluation pipeline to automatically assess Ford’s recommendation models via semantic alignment against reference product and content data, replacing manual spot-checks with a scalable, metric-driven framework.</li>
+                <li>Fine-tuned and productionized lightweight semantic transformer encoders in the recommendation stack, optimizing batching, caching, and model slimming to reduce end-to-end inference latency by 58% while maintaining recommendation quality.</li>
+                <li>Collaborated with data scientists and product managers to define offline/online metrics (semantic similarity, CTR, engagement) and used A/B tests to show ML-driven personalization contributed to a 22% increase in transactions and 38% more personalized product interactions.</li>
+                <li>Partnered with backend engineers to integrate ML services into Spring Boot/MVC microservices, exposing model inference APIs and feature-flagged rollouts for safe experimentation on high-traffic e-commerce flows.</li>
             </ul>
         </div>
         <div class="experience-item">
