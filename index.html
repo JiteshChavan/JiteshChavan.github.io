@@ -45,22 +45,19 @@
         <!-- Right Section (Glossy Rectangle) -->
         <div class="glossy-rectangle">
             <h2>About Me</h2>
-            <p>I am a Computer Science Graduate student at the NJIT. My research focuses Machine Learning Algorithms, in particular Generative Modeling and connections to Mathematics and Physics. I work on engineering and scaling Foundation Models with an emphasis on their applications for generative tasks in non sequential modalities (images, protien structures) and for Large Language Models.   
+            <p>I am a Computer Science Graduate student at the NJIT. My research focuses Machine Learning Algorithms, in particular Generative Modeling and connections to Mathematics and Physics. I work on engineering and scaling Foundation Models with an emphasis on their applications for controllable generative tasks in modalities: videos, images, protien structures and for Large Language Models.   
             </p>
             <p>
-                As a Graduate Student Researcher at NJIT, I have extensively worked on Physics based Generative Foundation Models including Flow Matching, Score-Matching, Denoising Diffusion Models for downstream generative tasks such as text/stroke guided image generation and image inpainting via stochastic interpolants & control net frameworks.
+                As a Graduate Student Researcher at NJIT, I have extensively worked on Physics based Generative Foundation Models including Flow Matching, Score-Matching, Denoising Diffusion Models for downstream generative tasks such as efficient class guided video generation, text/stroke guided image generation and image inpainting via stochastic interpolants & control net frameworks.
+                At NJIT I worked with <a href="https://people.njit.edu/profile/mx6">Mengjia Xu</a> on State Space Models and Generative Modeling Research.
                 Before NJIT, I earned a B.Tech. in Electronics at VNIT, where I worked with <a href="https://dblp.org/pid/34/7796.html">K. M. Bhurchandi</a> on Computer Vision models for memory constrained single board computers, adversarial training and Variational Auto Encoders.
-            </p> 
+            </p>            
             <p>
-               I am currently preparing a research draft on eliminating causal inductive bias in state space (Mamba) models by proposing architectural modifications
-                to generalize them for generative modeling in non-sequential modalities such as 3D Gaussian Splatting and image generation.
-            </p>           
-            <p>
-                Prior to this I worked at Ford Motor Company as a Software Engineer on a Machine Learning Team, where I was responsible for instrumentation of transformer encoder backbones and BERT based NLP models for the e-commerce platform recommendation system and its evaluation pipeline.
+                Prior to this I worked at Ford Motor Company as a  Machine Learning Engineer, where I was responsible for instrumentation of transformer encoder backbones and BERT based NLP models for the e-commerce platform recommendation system and its evaluation pipeline.
             </p>
 
             <p>
-                Besides my work, I have passion for playing football, guitar and hiking.
+                Besides my work, I have passion for playing Violin and music in general.
             </p>
             <p>
                 If you'd like to take a look at my CV, drop me an email : jchavan010@gmail.com
@@ -84,13 +81,15 @@
                 <div class="project-info">
                     <h3><a href="https://github.com/JiteshChavan/GenerativeFlow-Video-Synthesis" target="_blank">Generative Flow Model for class guided video synthesis</a></h3>
                     <p>
-                        Engineered a 1.2B parameter Elucidated Latent Diffusion Sparse Transformer Model for text-guided image generation, achieving state-of-the-art results on a micro-budget.
-                        This project involved state of the art Cost Optimization techniques like patch masking to reduce input sequence length to the transformer backbone,
-                        lightweight patchmixer backbone prior to patch masking and the cardinal DiT backbone to alleviate the downsides of patch masking.
-                        Finally progressive Pretraining-Finetuning pipeline, with 75% patch masking and no patch masking respectively, enabling effective masked and unmasked denoising representation learning.
+                        Designed a Class guided Video synthesis generative Flow Matching model, with factorized space-time self attention for efficient temporal consistency and reduced flickering/warps in generations.
+
+                        Devised the training to use conditional OT flow matching: sample an interpolation between data latents and noise, then regress the model’s vector field to the target conditional flow field with an MSE objective.
+
+                        Implemented end-to-end training + sampling pipeline in PyTorch with DDP Multi GPU support. Single command training + sampling available on github repo.
+                        
                     </p>
-                    <p><strong>Skills:</strong>Multi-Modal / Cross-Modal Generative Modeling, Score Based Generative (Diffusion) Models, Computer Vision, Natural Language Processing</p>
-                    <p>The panels on the left depict inferences using the trained model for various prompts.
+                    <p><strong>Skills:</strong>Multi-Modal Generative Modeling, Diffusion Models, Flow Matching Models, Computer Vision</p>
+                    <p>The panels on the left depict inferences using the trained model for various class labels.
                         Click on the panels on the left to head over to the repository for more details.
                     </p>
                 </div>
